@@ -4,10 +4,10 @@ import os
 
 def print_usage():
     print("使い方:")
-    print("  reverse inputpath outputpath")
-    print("  copy inputpath outputpath")
-    print("  duplicate-contents inputpath n")
-    print("  replace-string inputpath needle newstring")
+    print("  reverse <inputpath> <outputpath>   - inputpathのファイル内容を逆にしてoutputpathに保存")
+    print("  copy <inputpath> <outputpath>      - inputpathをoutputpathにコピー")
+    print("  duplicate-contents <inputpath> <n> - inputpathの内容をn回複製してinputpathに上書き")
+    print("  replace-string <inputpath> <needle> <newstring> - inputpathのneedleをnewstringに置き換え")
 
 
 def validate_input_file(path):
@@ -72,7 +72,7 @@ def main():
     # コマンドが指定されていない場合は、使い方を表示してユーザー入力を促す。
     if len(sys.argv) < 2:
         print_usage()
-        user_input = input("コマンドを入力してください（例: reverse inputpath outputpath）: ").strip()
+        user_input = input("\nコマンドを入力してください（例: reverse test.txt output.txt）: ").strip()
         if not user_input:
             print("エラー: コマンドが指定されていません。")
             sys.exit(1)
